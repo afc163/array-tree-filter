@@ -1,7 +1,7 @@
 {
   "name": "array-tree-filter",
   "version": "1.0.0",
-  "description": "",
+  "description": "filter in array tree",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js"
