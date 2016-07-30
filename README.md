@@ -1,6 +1,6 @@
 # array-tree-filter
 
-filter in array tree.
+Filter by keys in array tree.
 
 [![NPM version](https://img.shields.io/npm/v/array-tree-filter.svg?style=flat)](https://npmjs.org/package/array-tree-filter)
 [![Build Status](https://img.shields.io/travis/afc163/array-tree-filter.svg?style=flat)](https://travis-ci.org/afc163/array-tree-filter)
@@ -8,25 +8,23 @@ filter in array tree.
 [![NPM downloads](http://img.shields.io/npm/dm/array-tree-filter.svg?style=flat)](https://npmjs.org/package/array-tree-filter)
 
 ```js
-var arrayTreeFilter = require('array-tree-filter');
+import arrayTreeFilter from 'array-tree-filter';
 
-var data = [{
+const data = [{
   value: 'a',
   children: [{
     value: 'b',
     children: [{
       value: 'c'
     }, {
-      value: 'd'
+      value: 'd',
     }]
-  }]
+  }],
 }];
-
-var values = ['a', 'b', 'c'];
-
-var result = arrayTreeFilter(data, function(item, level) {
-  return item.value === values[level];
-});
+const values = ['a', 'b', 'c'];
+const result = arrayTreeFilter(
+  data, (item, level) => item.value === values[level]
+);
 
 console.log(result);
 // [
