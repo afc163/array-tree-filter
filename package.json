@@ -4,8 +4,13 @@
   "description": "filter in array tree",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "npm run build && tape test/*.js",
+    "pub": "npm run build && npm publish",
+    "build": "rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file lib/index.js"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/afc163/array-tree-filter.git"
@@ -22,6 +27,7 @@
   },
   "homepage": "https://github.com/afc163/array-tree-filter#readme",
   "devDependencies": {
+    "rollup": "^0.52.1",
     "tape": "^4.3.0"
   }
 }
