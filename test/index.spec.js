@@ -1,5 +1,5 @@
 var test = require('tape').test;
-var arrayTreeFilter = require('..');
+var arrayTreeFilter = require('../lib');
 
 var data = [{
   value: 'a',
