@@ -19,4 +19,5 @@ function arrayTreeFilter(data, filterFn, options) {
   return result;
 }
 
-export default arrayTreeFilter;
+// export default arrayTreeFilter;
+module.exports = arrayTreeFilter;
