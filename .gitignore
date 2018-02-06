@@ -27,3 +27,4 @@ tmp/
 _site
 example.js
 lib
+yarn.lock
