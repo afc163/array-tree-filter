@@ -24,9 +24,7 @@
   "homepage": "https://github.com/afc163/array-tree-filter#readme",
   "devDependencies": {
     "rollup": "^0.52.1",
-    "tape": "^4.3.0"
-  },
-  "dependencies": {
-    "typescript": "^2.7.1"
+		"tape": "^4.3.0",
+		"typescript": "^2.7.1"
   }
 }
