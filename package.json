@@ -7,8 +7,7 @@
     "test": "npm run build && tape test/*.js",
     "pub": "npm run build && npm publish",
     "tsc": "tsc",
-    "build":
-      "npm run tsc && rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file lib/index.js"
+    "build": "npm run tsc && rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file lib/index.js"
   },
   "files": ["lib", "index.d.ts"],
   "repository": {
