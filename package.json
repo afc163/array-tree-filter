@@ -6,20 +6,16 @@
   "scripts": {
     "test": "npm run build && tape test/*.js",
     "pub": "npm run build && npm publish",
-    "build": "rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file lib/index.js"
+    "tsc": "tsc",
+    "build":
+      "npm run tsc && rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file lib/index.js"
   },
-  "files": [
-    "lib"
-  ],
+  "files": ["lib", "index.d.ts"],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/afc163/array-tree-filter.git"
   },
-  "keywords": [
-    "array",
-    "tree",
-    "filter"
-  ],
+  "keywords": ["array", "tree", "filter"],
   "author": "afc163 <afc163@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -28,6 +24,7 @@
   "homepage": "https://github.com/afc163/array-tree-filter#readme",
   "devDependencies": {
     "rollup": "^0.52.1",
-    "tape": "^4.3.0"
+    "tape": "^4.3.0",
+    "typescript": "^2.7.1"
   }
 }
