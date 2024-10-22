@@ -1,0 +1,45 @@
+codecov:
+  notify:
+    require_ci_to_pass: yes
+  coverage:
+    status:
+      project:
+        default:
+          target: auto
+          threshold: 1%
+      patch:
+        default:
+          target: auto
+          threshold: 1%
+  comment:
+    layout: "reach, diff, flags, files, footer"
+    behavior: default
+    require_changes: no
+  parsers:
+    gcov:
+      branch_detection:
+        conditional: yes
+        loop: yes
+        method: no
+        macro: no
+  flags:
+    unittests:
+      paths:
+        - "tests/"
+  ignore:
+    - "node_modules"
+    - "tests"
+  coverage:
+    precision: 2
+    round: down
+    range: "70...100"
+    color: "green"
+    status:
+      project:
+        default:
+          target: auto
+          threshold: 1%
+      patch:
+        default:
+          target: auto
+          threshold: 1%

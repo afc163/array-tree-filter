@@ -13,3 +13,10 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage/*.json
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
