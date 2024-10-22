@@ -3,15 +3,17 @@
   "version": "2.1.0",
   "description": "filter in array tree",
   "main": "lib/index.js",
+  "type": "module",
   "scripts": {
-    "test": "npm run build && node --test",
-    "pub": "npm run build && npm publish",
+    "pretest": "npm run build",
+    "test": "node --test --experimental-strip-types '**/*.test.ts'",
+    "prepublishOnly": "npm run build",
     "tsc": "tsc",
-    "build": "npm run tsc && rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file lib/index.js"
+    "prebuild": "npm run tsc",
+    "build": "rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file lib/index.js"
   },
   "files": [
-    "lib",
-    "index.d.ts"
+    "lib"
   ],
   "repository": {
     "type": "git",
