@@ -26,7 +26,6 @@ tmp/
 .yml
 _site
 example.js
-lib
 yarn.lock
 index.js
 index.d.ts
