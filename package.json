@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "vitest",
+    "test": "vitest --coverage",
     "prepublishOnly": "npm run tsc",
     "tsc": "tsc"
   },
