@@ -1,8 +1,14 @@
-const test = require('node:test');
-const assert = require('assert');
-const arrayTreeFilter = require('../lib');
+import { test } from 'node:test';
+import assert from 'assert';
+import arrayTreeFilter from '../index.ts';
 
-const data = [{
+interface TreeNode {
+  value: string;
+  children?: TreeNode[];
+  childNodes?: TreeNode[];
+}
+
+const data: TreeNode[] = [{
   value: 'a',
   children: [{
     value: 'b',
@@ -14,20 +20,19 @@ const data = [{
   }]
 }];
 
-const values = ['a', 'b', 'c'];
+const values: string[] = ['a', 'b', 'c'];
 
-test('basic use', (t) => {
-  const result = arrayTreeFilter(data, (item, level) => {
+test('基本用法', () => {
+  const result = arrayTreeFilter(data, (item: TreeNode, level: number) => {
     return item.value === values[level];
   });
   assert.strictEqual(result.length, 3);
   assert.strictEqual(result[0].value, 'a');
   assert.strictEqual(result[1].value, 'b');
   assert.strictEqual(result[2].value, 'c');
-  t();
 });
 
-const data2 = [{
+const data2: TreeNode[] = [{
   value: 'a',
   childNodes: [{
     value: 'b',
@@ -39,8 +44,8 @@ const data2 = [{
   }]
 }];
 
-test('childrenKeyName', (t) => {
-  const result = arrayTreeFilter(data2, (item, level) => {
+test('childrenKeyName', () => {
+  const result = arrayTreeFilter(data2, (item: TreeNode, level: number) => {
     return item.value === values[level];
   }, {
     childrenKeyName: 'childNodes'
@@ -49,5 +54,4 @@ test('childrenKeyName', (t) => {
   assert.strictEqual(result[0].value, 'a');
   assert.strictEqual(result[1].value, 'b');
   assert.strictEqual(result[2].value, 'c');
-  t();
 });
