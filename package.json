@@ -5,12 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "pretest": "npm run build",
     "test": "node --test --experimental-strip-types '**/*.test.ts'",
-    "prepublishOnly": "npm run build",
-    "tsc": "tsc",
-    "prebuild": "npm run tsc",
-    "build": "rollup index.js --output.format umd --name 'arrayTreeFilter' --output.file index.js"
+    "prepublishOnly": "npm run tsc",
+    "tsc": "tsc"
   },
   "files": [
     "index.d.ts"
@@ -31,7 +28,6 @@
   },
   "homepage": "https://github.com/afc163/array-tree-filter#readme",
   "devDependencies": {
-    "rollup": "^4.24.0",
     "typescript": "^5.6.3"
   }
 }
