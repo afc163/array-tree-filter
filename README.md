@@ -1,6 +1,6 @@
 # array-tree-filter
 
-Filter by keys in array tree.
+Filter and traverse nested hierarchical tree structures.
 
 [![NPM version](https://img.shields.io/npm/v/array-tree-filter.svg?style=flat)](https://npmjs.org/package/array-tree-filter)
 [![NPM downloads](http://img.shields.io/npm/dm/array-tree-filter.svg?style=flat)](https://npmjs.org/package/array-tree-filter)
