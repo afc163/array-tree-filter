@@ -29,3 +29,4 @@ example.js
 yarn.lock
 index.js
 index.d.ts
+coverage
