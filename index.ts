@@ -1,24 +1,19 @@
 const arrayTreeFilter = <T>(
   data: T[],
   filterFn: (item: T, level: number) => boolean,
-  options?: {
-    childrenKeyName?: string;
-  }
+  { childrenKeyName = "children" } = {}
 ): T[] => {
-  options = options || {};
-  options.childrenKeyName = options.childrenKeyName || "children";
-  let children = data || [];
   const result: T[] = [];
-  let level = 0;
-  do {
-    const foundItem: T = children.filter((item) => filterFn(item, level))[0];
-    if (!foundItem) {
-      break;
-    }
+  let children = data;
+
+  for (let level = 0; children.length > 0; level++) {
+    const foundItem = children.find(item => filterFn(item, level));
+    if (!foundItem) break;
+
     result.push(foundItem);
-    children = (foundItem as any)[options.childrenKeyName] || [];
-    level += 1;
-  } while (children.length > 0);
+    children = (foundItem as any)[childrenKeyName] || [];
+  }
+
   return result;
 };
 
