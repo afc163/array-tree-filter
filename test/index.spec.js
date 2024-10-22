@@ -1,7 +1,8 @@
-var test = require('tape').test;
-var arrayTreeFilter = require('../lib');
+const test = require('node:test');
+const assert = require('assert');
+const arrayTreeFilter = require('../lib');
 
-var data = [{
+const data = [{
   value: 'a',
   children: [{
     value: 'b',
@@ -13,20 +14,20 @@ var data = [{
   }]
 }];
 
-var values = ['a', 'b', 'c'];
+const values = ['a', 'b', 'c'];
 
-test('basic use', function(t) {
-  var result = arrayTreeFilter(data, function(item, level) {
+test('basic use', (t) => {
+  const result = arrayTreeFilter(data, (item, level) => {
     return item.value === values[level];
   });
-  t.equal(result.length, 3);
-  t.equal(result[0].value, 'a');
-  t.equal(result[1].value, 'b');
-  t.equal(result[2].value, 'c');
-  t.end();
+  assert.strictEqual(result.length, 3);
+  assert.strictEqual(result[0].value, 'a');
+  assert.strictEqual(result[1].value, 'b');
+  assert.strictEqual(result[2].value, 'c');
+  t();
 });
 
-var data2 = [{
+const data2 = [{
   value: 'a',
   childNodes: [{
     value: 'b',
@@ -38,15 +39,15 @@ var data2 = [{
   }]
 }];
 
-test('childrenKeyName', function(t) {
-  var result = arrayTreeFilter(data2, function(item, level) {
+test('childrenKeyName', (t) => {
+  const result = arrayTreeFilter(data2, (item, level) => {
     return item.value === values[level];
   }, {
     childrenKeyName: 'childNodes'
   });
-  t.equal(result.length, 3);
-  t.equal(result[0].value, 'a');
-  t.equal(result[1].value, 'b');
-  t.equal(result[2].value, 'c');
-  t.end();
+  assert.strictEqual(result.length, 3);
+  assert.strictEqual(result[0].value, 'a');
+  assert.strictEqual(result[1].value, 'b');
+  assert.strictEqual(result[2].value, 'c');
+  t();
 });
