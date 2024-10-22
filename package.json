@@ -30,7 +30,7 @@
   "homepage": "https://github.com/afc163/array-tree-filter#readme",
   "devDependencies": {
     "rollup": "^4.24.0",
-    "tape": "^4.3.0",
+    "tape": "^5.9.0",
     "typescript": "^5.6.3"
   }
 }
