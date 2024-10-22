@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install
-      - run: npm run test
+      - run: npm test
       - uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
