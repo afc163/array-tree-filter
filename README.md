@@ -4,6 +4,7 @@ Filter and traverse nested hierarchical tree structures.
 
 [![NPM version](https://img.shields.io/npm/v/array-tree-filter.svg?style=flat)](https://npmjs.org/package/array-tree-filter)
 [![NPM downloads](http://img.shields.io/npm/dm/array-tree-filter.svg?style=flat)](https://npmjs.org/package/array-tree-filter)
+[![codecov](https://codecov.io/gh/afc163/array-tree-filter/branch/main/graph/badge.svg?token=YOUR_CODECOV_TOKEN)](https://codecov.io/gh/afc163/array-tree-filter)
 
 ```js
 import arrayTreeFilter from 'array-tree-filter';
@@ -30,4 +31,3 @@ console.log(result);
 //   { value: 'b', children: [...] },
 //   { value: 'c', children: [...] }
 // ]
-```

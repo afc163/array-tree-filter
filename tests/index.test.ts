@@ -1,5 +1,4 @@
-import { test } from 'node:test';
-import assert from 'assert';
+import { test, assert } from 'vitest';
 import arrayTreeFilter from '../index.ts';
 
 interface TreeNode {
