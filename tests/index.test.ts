@@ -22,7 +22,7 @@ const data: TreeNode[] = [{
 const values: string[] = ['a', 'b', 'c'];
 
 test('基本用法', () => {
-  const result = arrayTreeFilter(data, (item: TreeNode, level: number) => {
+  const result = arrayTreeFilter<TreeNode>(data, (item: TreeNode, level: number) => {
     return item.value === values[level];
   });
   assert.strictEqual(result.length, 3);
@@ -44,7 +44,7 @@ const data2: TreeNode[] = [{
 }];
 
 test('childrenKeyName', () => {
-  const result = arrayTreeFilter(data2, (item: TreeNode, level: number) => {
+  const result = arrayTreeFilter<TreeNode>(data2, (item: TreeNode, level: number) => {
     return item.value === values[level];
   }, {
     childrenKeyName: 'childNodes'
@@ -53,4 +53,19 @@ test('childrenKeyName', () => {
   assert.strictEqual(result[0].value, 'a');
   assert.strictEqual(result[1].value, 'b');
   assert.strictEqual(result[2].value, 'c');
+});
+
+test('empty array input', () => {
+  const result = arrayTreeFilter<TreeNode>([], (item: TreeNode, level: number) => {
+    return item.value === values[level];
+  });
+  assert.strictEqual(result.length, 0);
+});
+
+const falsy_values: string[] = ['x', 'y', 'z'];
+test('should not find item when path array is wrong', () => {
+  const result = arrayTreeFilter<TreeNode>(data2, (item: TreeNode, level: number) => {
+    return item.value === falsy_values[level];
+  });
+  assert.strictEqual(result.length, 0);
 });

@@ -1,4 +1,4 @@
-const arrayTreeFilter = <T extends Record<string, unknown>>(
+const arrayTreeFilter = <T>(
   data: T[],
   filterFn: (item: T, level: number) => boolean,
   { childrenKeyName = "children" } = {}
@@ -11,7 +11,7 @@ const arrayTreeFilter = <T extends Record<string, unknown>>(
       break;
     }
     result.push(foundItem);
-    children = (foundItem[childrenKeyName] as T[] | undefined) || [];
+    children = (foundItem as any)[childrenKeyName] || [];
   }
 
   return result;
