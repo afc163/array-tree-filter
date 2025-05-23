@@ -1,6 +1,6 @@
 {
   "name": "array-tree-filter",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "filter in array tree",
   "main": "dist/index.js",
   "type": "module",
